@@ -1,0 +1,14 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+  <arg name="model" default="$(find elvis)/urdf/elvis_aufstehen.urdf"/>
+  <arg name="gui" default="true"/>
+  <param name="robot_description" textfile="$(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+  <param name="publish_frequency" value="20.0"/>
+  </node>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_tutorial)/urdf.rviz" required="true" />
+</launch>

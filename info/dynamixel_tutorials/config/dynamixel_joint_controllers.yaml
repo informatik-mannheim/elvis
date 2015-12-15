@@ -1,0 +1,259 @@
+controller_m11:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_11
+    joint_speed: 1.0
+    motor:
+        id: 11
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m12:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_12
+    joint_speed: 1.0
+    motor:
+        id: 12
+        init: 444
+        min: 0
+        max: 1023
+
+controller_m13:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_13
+    joint_speed: 1.0
+    motor:
+        id: 13
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m14:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_14
+    joint_speed: 1.0
+    motor:
+        id: 14
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m15:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_15
+    joint_speed: 1.0
+    motor:
+        id: 15
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m16:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_16
+    joint_speed: 1.0
+    motor:
+        id: 16
+        init: 338
+        min: 0
+        max: 1023
+
+controller_m21:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_21
+    joint_speed: 1.0
+    motor:
+        id: 21
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m22:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_22
+    joint_speed: 1.0
+    motor:
+        id: 22
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m23:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_23
+    joint_speed: 1.0
+    motor:
+        id: 23
+        init: 408
+        min: 0
+        max: 1023
+
+controller_m24:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_24
+    joint_speed: 1.0
+    motor:
+        id: 24
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m25:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_25
+    joint_speed: 1.0
+    motor:
+        id: 25
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m26:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_26
+    joint_speed: 1.0
+    motor:
+        id: 26
+        init: 505
+        min: 0
+        max: 1023
+
+controller_m31:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_33
+    joint_speed: 1.0
+    motor:
+        id: 31
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m32:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_33
+    joint_speed: 1.0
+    motor:
+        id: 32
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m33:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_33
+    joint_speed: 1.0
+    motor:
+        id: 33
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m41:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_33
+    joint_speed: 1.0
+    motor:
+        id: 41
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m42:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_33
+    joint_speed: 1.0
+    motor:
+        id: 42
+        init: 444
+        min: 0
+        max: 1023
+
+controller_m43:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_33
+    joint_speed: 1.0
+    motor:
+        id: 43
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m51:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_33
+    joint_speed: 1.0
+    motor:
+        id: 51
+        init: 512
+        min: 0
+        max: 1023
+
+controller_m61:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint_61
+    joint_speed: 1.0
+    motor:
+        id: 61
+        init: 512
+        min: 0
+        max: 1023

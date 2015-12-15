@@ -1,0 +1,33 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find dynamixel_tutorials)/config/dynamixel_joint_controllers.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="dynamixel_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=pan_tilt_port
+                --type=simple
+                controller_m11
+                controller_m12
+		controller_m13
+		controller_m14
+		controller_m15
+		controller_m16
+		controller_m21
+		controller_m22
+		controller_m23
+		controller_m24
+		controller_m25
+		controller_m26
+		controller_m31
+		controller_m32
+		controller_m33
+		controller_m41
+		controller_m42
+		controller_m43
+		controller_m51
+		controller_m61"
+          output="screen"/>
+</launch>

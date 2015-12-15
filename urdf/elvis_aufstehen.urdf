@@ -1,0 +1,416 @@
+<?xml version="1.0"?>
+<robot name="elvis">
+
+<!--///////////////////////////////////BEIN L/////////////////////////////////////////////////////// -->
+<link name="base_link"/>
+<joint name="base_link_to_humanoid_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="fuss_l_link"/>
+</joint>
+	<link name="fuss_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_joint_fusskontakt_l_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+			
+	</link>
+	<link name="kardan2_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_kardan2_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m16" type="revolute">
+		<parent link="fuss_l_link"/>
+		<child link="kardan2_l_link"/>
+		<origin xyz="0.0 0.0 0.046" rpy="0 0 0"/>
+		<axis xyz="1 0 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="unterschenkel_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_unterschenkel_l_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m15" type="revolute">
+		<parent link="kardan2_l_link"/>
+		<child link="unterschenkel_l_link"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="oberschenkel_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_oberschenkel_l_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m14" type="revolute">
+		<parent link="unterschenkel_l_link"/>
+		<child link="oberschenkel_l_link"/>
+		<origin xyz="0.0 0.0022 0.107" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="kardan2_oben_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_kardan2_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m12" type="revolute">
+		<parent link="oberschenkel_l_link"/>
+		<child link="kardan2_oben_l_link"/>
+		<origin xyz="0.0 0.0 0.118" rpy="0 0 1.57"/>
+		<axis xyz="-1 0 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="kardan1_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t4_kardan1_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m13" type="revolute">
+		<parent link="kardan2_oben_l_link"/>
+		<child link="kardan1_l_link"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 -1.57"/>
+		<axis xyz="1 0 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+<!--///////////////////////////////////BEIN L ENDE/////////////////////////////////////////////////////// -->
+
+<!--///////////////////////////////////BECKEN /////////////////////////////////////////////////////////// -->
+	<link name="becken_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t2_becken.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m11" type="revolute">
+		<parent link="kardan1_l_link"/>
+		<child link="becken_link"/>
+		<origin xyz="0.0 0.0 0.065" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+<!--///////////////////////////////////BEIN R/////////////////////////////////////////////////////// -->
+<link name="kardan1_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t4_kardan1_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m21" type="revolute">
+		<parent link="becken_link"/>
+		<child link="kardan1_r_link"/>
+		<origin xyz="0.0 -0.083 -0.065" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="kardan2_oben_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_kardan2_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m23" type="revolute">
+		<parent link="kardan1_r_link"/>
+		<child link="kardan2_oben_r_link"/>
+		<origin xyz="0.0 0.0 -0.0" rpy="0 0 1.57"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="oberschenkel_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_oberschenkel_r.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m22" type="revolute">
+		<parent link="kardan2_oben_r_link"/>
+		<child link="oberschenkel_r_link"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 -1.57"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="unterschenkel_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_unterschenkel_r_neu.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m24" type="revolute">
+		<parent link="oberschenkel_r_link"/>
+		<child link="unterschenkel_r_link"/>
+		<origin xyz="0.0 0.0 -0.118" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="kardan2_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_kardan2_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m25" type="revolute">
+		<parent link="unterschenkel_r_link"/>
+		<child link="kardan2_r_link"/>
+		<origin xyz="0.00 0.0016 -0.107" rpy="0 0 3.14"/>
+		<axis xyz="0 -1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="fuss_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_joint_fusskontakt_r_neu_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m26" type="revolute">
+		<parent link="kardan2_r_link"/>
+		<child link="fuss_r_link"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 3.14"/>
+		<axis xyz="-1 0 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+<!--///////////////////////////////////BEIN R ENDE/////////////////////////////////////////////////////// -->
+<!--///////////////////////////////////RUMPF/////////////////////////////////////////////////////// -->
+	<link name="rumpf_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t2_rumpf_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m51" type="revolute">
+		<parent link="becken_link"/>
+		<child link="rumpf_link"/>
+		<origin xyz="0.0218 -0.0415 0.039" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+<!--///////////////////////////////////RUMPF ENDE/////////////////////////////////////////////////////// -->
+<!--///////////////////////////////////KOPF/////////////////////////////////////////////////////// -->
+	<link name="hals_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_hals_neu.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m61" type="revolute">
+		<parent link="rumpf_link"/>
+		<child link="hals_link"/>
+		<origin xyz="0.0143 0.0 0.1640" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="kopf_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_kopf_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m62" type="revolute">
+		<parent link="hals_link"/>
+		<child link="kopf_link"/>
+		<origin xyz="0.020 0.0 0.0" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+
+
+<!--///////////////////////////////////KOPF ENDE/////////////////////////////////////////////////////// -->
+<!--///////////////////////////////////ARM L/////////////////////////////////////////////////////// -->
+	<link name="schulter_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_arm_ober_roll_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m31" type="revolute">
+		<parent link="rumpf_link"/>
+		<child link="schulter_l_link"/>
+		<origin xyz="0.0 0.082 0.1217" rpy="0 0 3.14"/>
+		<axis xyz="0 -1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="ellenb_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_arm_ellenb_r_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m32" type="revolute">
+		<parent link="schulter_l_link"/>
+		<child link="ellenb_l_link"/>
+		<origin xyz="0.0 0.0 0.0" rpy="-0.52 0 0"/>
+		<axis xyz="1 0 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="unterarm_l_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_unterarm_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m33" type="revolute">
+		<parent link="ellenb_l_link"/>
+		<child link="unterarm_l_link"/>
+		<origin xyz="-0.005 -0.027 -0.135" rpy="0 -1.57 3.14"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+<!--///////////////////////////////////ARM L ENDE/////////////////////////////////////////////////////// -->
+<!--///////////////////////////////////ARM R/////////////////////////////////////////////////////// -->
+<link name="schulter_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_arm_ober_roll_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m41" type="revolute">
+		<parent link="rumpf_link"/>
+		<child link="schulter_r_link"/>
+		<origin xyz="0.0 -0.082 0.1217" rpy="0 0 0"/>
+		<axis xyz="0 -1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="ellenb_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_arm_ellenb_r_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m42" type="revolute">
+		<parent link="schulter_r_link"/>
+		<child link="ellenb_r_link"/>
+		<origin xyz="0.0 0.0 0.0" rpy="-0.52 0 0"/>
+		<axis xyz="-1 0 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+	<link name="unterarm_r_link">
+ 		<visual>
+			<geometry>
+				<mesh filename="package://elvis/stl/t3_unterarm_m.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="grey">
+				<color rgba="0.67 0.67 0.67 1"/>
+			</material>
+		</visual>
+	</link>
+	<joint name="m43" type="revolute">
+		<parent link="ellenb_r_link"/>
+		<child link="unterarm_r_link"/>
+		<origin xyz="-0.005 -0.027 -0.135" rpy="0 1.57 3.14"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1000.0" lower="-0.548" upper="0.548" velocity="0.5"/>
+	</joint>
+<!--///////////////////////////////////ARM R ENDE/////////////////////////////////////////////////////// -->
+
+</robot>
